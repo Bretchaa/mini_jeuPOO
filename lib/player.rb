@@ -1,9 +1,15 @@
 class Player
     attr_accessor :life_points, :name
+    @@enemies = []
   
     def initialize(name_to_save)
       @name = name_to_save
       @life_points = 10
+      @@enemies << self
+    end
+
+    def self.all
+        return @@enemies
     end
 
     def show_state

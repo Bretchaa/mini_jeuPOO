@@ -16,7 +16,6 @@ user= HumanPlayer.new(name_to_save)
 
 player1 = Player.new("Josiane")
 player2 = Player.new("José")
-enemies = [player1, player2]
 
 while user.life_points >0 && (player1.life_points > 0 || player2.life_points >0) do
     #(player1.life_points > 0 || player2.life_points >0) 
@@ -44,7 +43,7 @@ while user.life_points >0 && (player1.life_points > 0 || player2.life_points >0)
     puts " "
     puts "Les autres joueurs t'attaquent !"
 
-    enemies.each do |x|
+    Player.all.each do |x|
         x.attacks(user)
         if user.life_points == 0
             break
